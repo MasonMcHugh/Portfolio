@@ -64,7 +64,30 @@ In this section we will demonstrate how to create and combine two dataframes tog
 2. Using the [pd.rename](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html?highlight=rename#pandas.DataFrame.rename) function we will change the name of the rank column and then output the dataframe to confirm that the name did change.
 
 ##### Reordering
-1. After creating a new variable "column_names" we can use the [od.reindex](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html?highlight=reindex#pandas.DataFrame.reindex) to change the order than we want the columns to be displayed in.
+1. After creating a new variable "column_names" we can use the [pd.reindex](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html?highlight=reindex#pandas.DataFrame.reindex) to change the order than we want the columns to be displayed in.
 
 
 ### Section 4 - Groupby, Case WHEN and WHERE
+This section will cover how to use the [Groupby](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html?highlight=groupby#pandas.DataFrame.groupby) function, the Numpy [Case WHERE](https://numpy.org/doc/stable/reference/generated/numpy.where.html) function, and Case WHEN function using mathematical equations.
+
+##### Groupby
+1. We start again by creating a new dataframe from the .csv file that we've imported.
+2. In line 33 you can see how we've used the pd.groupby function to order the data by 'rank' and by 'sex'.
+3. We can then use the [pd.count](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.DataFrameGroupBy.count.html?highlight=count#pandas.core.groupby.DataFrameGroupBy.count) funciton to see how many and what type of values we sorted in the 'sex' column.
+
+##### WHERE
+1. After using groupby, we can use the '==' symbol to filter for all values in the 'sex' column that are equal to the value 'Male'.
+2. When we output the first five rows on the dataframe we can see that the only value in the 'sex' column is 'Male'.
+3. From this sorted data, we can do a number of calculations, the example provided shows whhat the average salary is using the [.mean](https://pandas.pydata.org/docs/reference/api/pandas.core.groupby.GroupBy.mean.html?highlight=mean#pandas.core.groupby.GroupBy.mean) function.
+
+##### WHEN
+Method 1: Numpy
+1. In the first method we use the numpy .where funciton along with 'greater than or euq2la to' and 'less than' operators to assign two values, 'large' or 'small', to the values in the newly created column 'salary_rank'.
+
+Method 2: Formulation
+1. Similar to method 1 where we use '>=" and '<', here we use those along with [.loc](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html?highlight=loc#pandas.DataFrame.loc) to assign the 'salary' variables a value, 'large' or 'small', in the newly created column 'salary_rank'.
+
+### Section 5 - Practice
+In this section you can attempt to solve each problem by ustilizing the examples provided throughout the Python code file.
+
+## Deployment
