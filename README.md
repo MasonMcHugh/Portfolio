@@ -10,9 +10,61 @@ In order for to use this code you will be required to install Anaconda, Jupyter 
 #### Installing
 To intall Jupyter Notebook and run the included Python code, follow the steps below.
 
-1. Download the Python code attached to this project.
+1. Download the Python code and .csv file attached to this project.
 2. The first step is to instal [Anaconda](https://docs.anaconda.com/anaconda/install/). After selecting the correct link for the system you are working on, follow the on-screen instructions to complete the installation.
 3. Launch the Anaconda Navigator once it is installed and in the 'Home' tab find and install the Jupyter Notebook application.
-4. When Jupyter Notebook launches in your browser locate the Python code from your Downloads folder and upload it to the Jupyter homepage. Click on the imported file and you will now be in the Python code.
+4. When Jupyter Notebook launches in your browser locate the Python code and .csv file from your Downloads folder and upload them to the Jupyter homepage. Click on the imported file and you will now be in the Python code.
 
 Included in the code are instructions on how to install Pandas and Numpy within Python.
+
+To confirm that everything has been successful up to this point, run the first section of the code and you should get the following output on line 8:
+
+![Screenshot 2022-04-04 105812](https://user-images.githubusercontent.com/102973887/161572291-703b42e0-5ca9-488d-a09a-67c38a06d877.png)
+
+
+## Running the Tests
+Using the command buttons at the top of Jupyter Notebook, you can run the selection section of code with the 'Run' key
+
+![image](https://user-images.githubusercontent.com/102973887/161573393-2da7e20f-cb60-485b-920d-c79f0f5445b1.png)
+
+### Breakdown of Tests
+
+### Section 1 - Columns
+Section 1 of this code will walk you through two methods on how to create new columns with the imported dataset in Python.
+* We start with using the Pandas function pd.set_option to increase the number of columns and then importing the .csv file and assigning is the name File_1.
+* Then a new dataframe is defined and raw_df where we use the Pandas function [pd.read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html) to attach the .csv file to this dataframe.
+* In line 6 we created a new column "Benchmarks" and give is a baseline value of 70,000.
+* Then we create another column "Salary_score" and compute the values by dividing the value in the "salary" column by the values in the "Benchmarks" column and [rounding](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.round.html?highlight=round#pandas.DataFrame.round) it to 2 decimal places.
+* We output the top 5 rows of the dataset to see that we've successfully added these new columns and then we output all of the columns within the dataset
+
+##### Dropping a Column
+This code includes two methods you could use to get rid of a column from the dataset.
+
+Method 1:
+* Create a new dataframe from the existing datafame (Subset_raw_df) and only assign the newly created dataframe the desired columns (line 10).
+
+Method 2:
+* Using the Pandas function [pd.drop](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html?highlight=drop#pandas.DataFrame.drop) you can select the columns from the existing data set that you would like not to include (line 11).
+
+### Section 2 - Concatenate and Append
+In this section we will demonstrate how to create and combine two dataframes together.
+
+##### Appending
+1. We create an empty datafame called "append_to_df1" and we assign three values to it using the [pd.append](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.append.html?highlight=append#pandas.DataFrame.append) function
+2. We assign these value to a new dataframe "df1" using the [pd.dataframe](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html?highlight=dataframe#pandas.DataFrame) function and creating three columns for these imported values, "ID", "Name", and "Age"
+
+##### Concatentating
+1. First we repeat the steps above so that we not have two dataframes with different values.
+2. The [pd.concat](https://pandas.pydata.org/docs/reference/api/pandas.concat.html?highlight=concat#pandas.concat) is used to combine the two dataframes into one dataframe that we've called "combined_df"
+
+### Section 3 - Renaming and Reordering
+
+##### Renaming
+1. To demonstrate how to rename columns we will create a new dataframe from the existing dataframe and select three columns that we want to work with and output the  dataframe to see the columns.
+2. Using the [pd.rename](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.rename.html?highlight=rename#pandas.DataFrame.rename) function we will change the name of the rank column and then output the dataframe to confirm that the name did change.
+
+##### Reordering
+1. After creating a new variable "column_names" we can use the [od.reindex](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reindex.html?highlight=reindex#pandas.DataFrame.reindex) to change the order than we want the columns to be displayed in.
+
+
+### Section 4 - Groupby, Case WHEN and WHERE
