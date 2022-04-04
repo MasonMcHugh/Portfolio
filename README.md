@@ -91,3 +91,11 @@ Method 2: Formulation
 In this section you can attempt to solve each problem by ustilizing the examples provided throughout the Python code file.
 
 ## Deployment
+This code can be used to alter any dataset in .csv format with any number of columns and types of variables.
+
+## Author
+Mason McHugh - DATA1202 Assignment 5 - 04/04/22
+
+## Acknowledgements
+Original Code by: Omar Al-Trad
+Institution: Durham College
